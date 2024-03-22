@@ -1085,6 +1085,9 @@ def create_ui():
             outputs=[],
         )
 
+    with gr.Blocks(analytics_enabled=False) as tutorials_interface:
+        ui_postprocessing.create_ui()
+
     loadsave = ui_loadsave.UiLoadsave(cmd_opts.ui_config_file)
 
     settings = ui_settings.UiSettings()
@@ -1097,6 +1100,7 @@ def create_ui():
         (pnginfo_interface, "PNG Info", "pnginfo"),
         (modelmerger_ui.blocks, "Checkpoint Merger", "modelmerger"),
         (train_interface, "Train", "train"),
+        (tutorials_interface,"tutorials", "tutorials"),
     ]
 
     interfaces += script_callbacks.ui_tabs_callback()
