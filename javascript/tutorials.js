@@ -1,3 +1,4 @@
+//need to figure out where the javascript files are used for the tabs
 function settingsShowOneTab() {
     gradioApp().querySelector('#settings_show_one_page').click();
 }
